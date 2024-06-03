@@ -1,0 +1,321 @@
+body {
+  margin: 0;
+}
+
+.main-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #1b2735, #090a0f);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 1;
+  transition: opacity 1s;
+  position: relative;
+
+  &.fade-out {
+    opacity: 0;
+  }
+
+  .loader {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    .spin-blend {
+      transform: rotateZ(90deg);
+      perspective: 1000px;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      color: #e31b6d;
+      position: absolute;
+      top: 0;
+      left: 0;
+      &:nth-child(2) {
+        transform: rotate(90deg);
+      }
+      &:nth-child(3) {
+        transform: rotate(220deg);
+      }
+      &:nth-child(4) {
+        transform: rotate(270deg);
+      }
+      &:nth-child(5) {
+        transform: rotate(310deg);
+      }
+      &:nth-child(6) {
+        transform: rotate(130deg);
+      }
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        transform: rotateX(70deg);
+        animation: 2s spin linear infinite;
+      }
+      &:after {
+        transform: rotateY(70deg);
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  .loading-text {
+    color: #e7e7e7;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 24px;
+    .letter {
+      animation: 2s bounce infinite;
+      transform: rotate(6deg);
+      &:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+      &:nth-child(7) {
+        animation-delay: 0.6s;
+      }
+      &:nth-child(8) {
+        animation-delay: 0.8s;
+      }
+      &:nth-child(9) {
+        animation-delay: 1s;
+      }
+      &:nth-child(10) {
+        animation-delay: 1.2s;
+      }
+    }
+  }
+
+  .progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    .progress-percentage {
+      color: #e7e7e7;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .progress-bar {
+      width: 200px;
+      height: 10px;
+      background: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+
+      .progress {
+        height: 100%;
+        background: #e31b6d;
+        transition: width 0.6s;
+      }
+    }
+  }
+
+  .button-container {
+    position: absolute;
+    top: calc(50% + 150px); /* Adjust this value to move the button lower */
+    left: 49.9%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .button-animation {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #e31b6d;
+      text-transform: uppercase;
+      overflow: hidden;
+      letter-spacing: 4px;
+      transition: 0.5s;
+      opacity: 0;
+      animation: fadeInButton 1s forwards;
+      animation-delay: 1s; /* Delay for the button animation */
+      span {
+        position: absolute;
+        display: block;
+      }
+      span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #e31b6d);
+        animation: btn-anim1 1s linear infinite;
+      }
+      @keyframes btn-anim1 {
+        0% {
+          left: -100%;
+        }
+        50%,
+        100% {
+          left: 100%;
+        }
+      }
+      span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #e31b6d);
+        animation: btn-anim2 1s linear infinite;
+        animation-delay: 0.25s;
+      }
+      @keyframes btn-anim2 {
+        0% {
+          top: -100%;
+        }
+        50%,
+        100% {
+          top: 100%;
+        }
+      }
+      span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #e31b6d);
+        animation: btn-anim3 1s linear infinite;
+        animation-delay: 0.5s;
+      }
+      @keyframes btn-anim3 {
+        0% {
+          right: -100%;
+        }
+        50%,
+        100% {
+          right: 100%;
+        }
+      }
+      span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #e31b6d);
+        animation: btn-anim4 1s linear infinite;
+        animation-delay: 0.75s;
+      }
+      @keyframes btn-anim4 {
+        0% {
+          bottom: -100%;
+        }
+        50%,
+        100% {
+          bottom: 100%;
+        }
+      }
+      &:hover {
+        background-color: #e31b6d;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #e31b6d, 0 0 25px #e31b6d, 0 0 50px #e31b6d, 0 0 100px #e31b6d;
+      }
+    }
+  }
+
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      box-shadow: 0.5em 0px 0 0px #fff;
+    }
+    12% {
+      box-shadow: 0.5em 0.5em 0 0 #e31b6d;
+    }
+    25% {
+      box-shadow: 0 0.5em 0 0px #fff;
+    }
+    37% {
+      box-shadow: -0.5em 0.5em 0 0 #e31b6d;
+    }
+    50% {
+      box-shadow: -0.5em 0 0 0 #fff;
+    }
+    62% {
+      box-shadow: -0.5em -0.5em 0 0 #e31b6d;
+    }
+    75% {
+      box-shadow: 0px -0.5em 0 0 #fff;
+    }
+    87% {
+      box-shadow: 0.5em -0.5em 0 0 #e31b6d;
+    }
+    100% {
+      box-shadow: 0.5em 0px 0 0px #fff;
+    }
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0px);
+    }
+    40% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInButton {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes moveUp {
+     0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+}

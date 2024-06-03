@@ -1,0 +1,18 @@
+.resume-container {
+  padding: 20px;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-container h1 {
+  margin-bottom: 20px;
+}
+
+.resume-container object {
+  width: 80%;
+  height: 80vh;
+}

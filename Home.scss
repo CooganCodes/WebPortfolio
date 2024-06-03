@@ -1,0 +1,46 @@
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  background: transparent; /* Ensure no background color here */
+  z-index: 1; /* Ensure it is above the stars */
+
+  .highlight {
+    color: #e31b6d;
+  }
+
+  .animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .buttons {
+    margin-top: 20px;
+
+    button {
+      margin-left: 20px;
+      margin-right: 20px;
+      padding: 10px 20px;
+      background-color: #e31b6d;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-size: 1rem;
+      &:hover {
+        background-color: #bf1650;
+      }
+    }
+  }
+}

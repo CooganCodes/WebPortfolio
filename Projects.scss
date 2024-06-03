@@ -1,0 +1,226 @@
+.projects {
+  padding: 0;
+}
+
+.projects-container {
+  text-align: center;
+  padding: 150px 0;
+  background-color: #20232a;
+  color: #fff;
+  overflow: hidden;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  margin-bottom: -57px;
+  position: relative;
+  top: -90px;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Default height */
+}
+
+.carousel__item {
+  position: absolute;
+  height: 350px;
+  width: 250px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+  transform-origin: center center;
+  filter: grayscale(80%); /* Apply 80% grayscale */
+}
+
+.carousel__item img,
+.carousel__item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__item--main {
+  transform: translateX(0) scale(1);
+  z-index: 2;
+  filter: none; /* Remove grayscale from the main item */
+}
+
+.carousel__item--left {
+  transform: translateX(-90%) scale(0.9); /* Reduce the translateX value to make items closer */
+  z-index: 0;
+  opacity: 70%;
+}
+
+.carousel__item--right {
+  transform: translateX(90%) scale(0.9); /* Reduce the translateX value to make items closer */
+  z-index: 0;
+  opacity: 70%;
+}
+
+.carousel__item--main:hover {
+  transform: translate(0%, -0%) scale(1.2);
+  z-index: 3;
+}
+
+.carousel__item:hover {
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
+
+.carousel__item--left:hover {
+  transform: translate(-100%, -0%) scale(1.2);
+  z-index: 3;
+  opacity: 100%;
+}
+
+.carousel__item--right:hover {
+  transform: translate(100%, -0%) scale(1.2);
+  z-index: 3;
+  opacity: 100%;
+}
+
+.carousel__btns {
+  position: absolute;
+  bottom: -75px; /* Adjust as needed to ensure visibility */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 10; /* Ensure they are above other elements */
+}
+
+.carousel__btn {
+  background-color: #e9e9e9;
+  color: #fff;
+  opacity: 0.7;
+  border: 1px solid #000000; /* Add border */
+  box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1px 50px; /* Add padding for better styling */
+  margin: 0 10px; /* Adjust margin */
+  cursor: pointer;
+  border-radius: 100px; /* Add border-radius for rounded corners */
+  transition: background-color 0.3s, transform 0.3s; /* Add transition for smoother effect */
+  display: inline-block; /* Ensure the wrapper covers the button area */
+}
+
+.carousel__btn:hover {
+  background-color: #b1b1b1;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.carousel__btn .wrapper {
+  display: inline-block;
+}
+
+.carousel__btn .wrapper:hover svg {
+  fill: #e31b6d;
+}
+
+.wrapper svg {
+  width: 18px;
+  height: 17px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  overflow: visible;
+  polygon, path {
+    transition: all 0.5s ease;
+  }
+}
+
+.carousel__btn:hover svg .arrow {
+  animation: arrow-anim 2.5s ease infinite;
+}
+
+.carousel__btn:hover svg .arrow-fixed {
+  animation: arrow-fixed-anim 2.5s ease infinite;
+}
+
+@keyframes arrow-anim {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  5% {
+    transform: translateX(-0.1rem);
+  }
+  100% {
+    transform: translateX(1rem);
+    opacity: 0;
+  }
+}
+
+@keyframes arrow-fixed-anim {
+  5% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Ensure buttons are visible across all screen sizes */
+@media only screen and (max-width: 768px) {
+  .carousel {
+    height: 700px; /* Increase height for smaller screens */
+  }
+
+  .projects-title {
+    top: 50px; /* Adjust the top position for smaller screens */
+  }
+
+  .carousel__btns {
+    bottom: 65px; /* Adjust to move buttons lower for smaller screens */
+  }
+
+  .carousel__btn {
+    padding: 8px 16px;
+    margin: 0 5px;
+  }
+}
+
+.carousel__text {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 20; /* Ensure the text and button are above other elements */
+}
+
+.carousel__item:hover .carousel__text {
+  opacity: 1;
+}
+
+.learn-more {
+  background-color: #e31b6d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: auto;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 20; /* Ensure the button is above other elements */
+}
+
+.learn-more:hover {
+  background-color: #bf1650;
+  transform: scale(1.1);
+}
+
+.project-details {
+  display: none; /* Hide the project details */
+}

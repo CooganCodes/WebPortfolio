@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e31b6d;
+  }
+}

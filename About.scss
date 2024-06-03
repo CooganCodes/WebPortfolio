@@ -1,0 +1,206 @@
+.about {
+  text-align: center;
+  padding: 20px;
+
+  .qualities {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+
+    .quality {
+      background-color: #cacaca93;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 20%;
+      text-align: center;
+
+      .icon {
+        margin-bottom: 10px;
+      }
+
+      
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+      }
+    }
+  }
+
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem !important;
+  }
+
+  .profile-skills {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 40%;
+
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+        max-width: 600px;
+      }
+    }
+
+    .skills {
+      width: 50%;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .skill-bar {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+
+        .icon {
+          margin-right: 10px;
+        }
+
+        .html {
+          color: #e44d26;
+        }
+
+        .css {
+          color: #264de4;
+        }
+
+        .react {
+          color: #61dafb;
+        }
+
+        .js {
+          color: #f0db4f;
+        }
+
+        .node {
+          color: #68a063;
+        }
+
+        .python {
+          color: #306998;
+        }
+
+        .java {
+          color: #b07219;
+        }
+
+        .php {
+          color: #4F5B93;
+        }
+
+        .c {
+          color: #A8B9CC;
+        }
+
+        .progress {
+          background-color: #ddd;
+          height: 25px;
+          border-radius: 10px;
+          overflow: hidden;
+          width: 100%;
+          position: relative;
+          text-align: left;
+          line-height: 25px;
+          padding-left: 10px;
+          color: white;
+          font-size: 1rem;
+
+          &.html {
+            width: 90%;
+            background-color: #e44d26;
+          }
+
+          &.css {
+            width: 85%;
+            background-color: #264de4;
+          }
+
+          &.react {
+            width: 60%;
+            background-color: #61dafb;
+          }
+
+          &.js {
+            width: 60%;
+            background-color: #f0db4f;
+          }
+
+          &.node {
+            width: 60%;
+            background-color: #68a063;
+          }
+
+          &.python {
+            width: 85%;
+            background-color: #306998;
+          }
+
+          &.java {
+            width: 80%;
+            background-color: #b07219;
+          }
+
+          &.php {
+            width: 65%;
+            background-color: #4F5B93;
+          }
+
+          &.c {
+            width: 70%;
+            background-color: #A8B9CC;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .qualities {
+      flex-direction: column;
+
+      .quality {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+
+    .profile-skills {
+      flex-direction: column;
+
+      .profile, .skills {
+        width: 100%;
+      }
+    }
+  }
+}
